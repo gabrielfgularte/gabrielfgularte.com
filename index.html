@@ -29,7 +29,7 @@
 
     <title>Gabriel Gularte - Desenvolvedor Full Stack</title>
 
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,600" rel="stylesheet">
+    <link href="css/font.css" rel="stylesheet">
 
     <style media="screen">
       body {
@@ -258,24 +258,12 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'UA-63165910-2');
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.5.2/lazyload.min.js"></script>
+    <script type="text/javascript" src="js/lazyload-10.5.2.min.js"></script>
 
     <script type="text/javascript">
-      (function(w, d){
-        var b = d.getElementsByTagName('body')[0];
-        var s = d.createElement("script"); s.async = true;
-        var v = !("IntersectionObserver" in w) ? "8.7.1" : "10.5.2";
-        s.src = "https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/" + v + "/lazyload.min.js";
-        w.lazyLoadOptions = {}; // Your options here. See "recipes" for more information about async.
-        b.appendChild(s);
-        }(window, document));
-
-        new LazyLoad();
-
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker
            .register('./service-worker.js')
@@ -294,6 +282,8 @@
             })
           );
         });
+
+        new LazyLoad();
     </script>
 
   </body>

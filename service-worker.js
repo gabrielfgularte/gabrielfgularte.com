@@ -31,6 +31,8 @@
 /* eslint-disable quotes, comma-spacing */
 var PrecacheConfig = [
   ["/index.html", "7e5dee7784534c0ccc50f8ec71bccd3f"],
+  ["/imgs/works/logo.webp", "4ccb8d9cd5b87a92973cc6604873b65f"],
+  ["/imgs/works/logo.png", "4ccb8d9cd5b87a92973cc6604873b65f"],
   ["/imgs/works/aec.webp", "4ccb8d9cd5b87a92973cc7704873b65f"],
   ["/imgs/works/aec.png", "7e00f1613408e109e6d26853846c8467"],
   ["/imgs/works/evin.webp", "1971572d82bd5c7e058d4e75bdd068df"],
@@ -42,7 +44,9 @@ var PrecacheConfig = [
   ["/imgs/works/priorite.webp", "858fecebfa2de294e8d3f7ba905d599e"],
   ["/imgs/works/priorite.png", "858fec01fa5de304e8d3f7ba905d599e"],
   ["/imgs/works/wiser.webp", "858fecebfa2de294e8d3f7ca905d599e"],
-  ["/imgs/works/wiser.png", "858fec01fa5de304e8d3f7da905d599e"]
+  ["/imgs/works/wiser.png", "858fec01fa5de304e8d3f7da905d599e"],
+  ["/css/font.css", "858fec01fa5de304e8d3f7da905d5990"],
+  ["/js/lazyload-10.5.2.min.js", "858fec01fa5de304e8d3f7da905d5910"],
 ];
 /* eslint-enable quotes, comma-spacing */
 var CacheNamePrefix = 'sw-precache-v1--' + (self.registration ? self.registration.scope : '') + '-';
