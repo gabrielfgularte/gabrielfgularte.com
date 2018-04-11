@@ -3,6 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="imgs/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="imgs/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="imgs/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="imgs/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="imgs/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="imgs/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="imgs/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="imgs/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="imgs/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="imgs/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="imgs/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imgs/icons/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="imgs/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#666666">
+
     <title>Gabriel Gularte - Desenvolvedor Full Stack</title>
 
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,600" rel="stylesheet">
@@ -77,7 +97,7 @@
         text-align: left;
       }
 
-      @media (max-width: 600px)  {
+      @media (max-width: 900px)  {
         ul li.job-list-item {
           height: auto;
           width: 100%;
@@ -221,16 +241,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.5.2/lazyload.min.js"></script>
 
     <script type="text/javascript">
-    (function(w, d){
-      var b = d.getElementsByTagName('body')[0];
-      var s = d.createElement("script"); s.async = true;
-      var v = !("IntersectionObserver" in w) ? "8.7.1" : "10.5.2";
-      s.src = "https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/" + v + "/lazyload.min.js";
-      w.lazyLoadOptions = {}; // Your options here. See "recipes" for more information about async.
-      b.appendChild(s);
-      }(window, document));
+      (function(w, d){
+        var b = d.getElementsByTagName('body')[0];
+        var s = d.createElement("script"); s.async = true;
+        var v = !("IntersectionObserver" in w) ? "8.7.1" : "10.5.2";
+        s.src = "https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/" + v + "/lazyload.min.js";
+        w.lazyLoadOptions = {}; // Your options here. See "recipes" for more information about async.
+        b.appendChild(s);
+        }(window, document));
 
-      new LazyLoad();
+        new LazyLoad();
+
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker
+           .register('./service-worker.js')
+           .then(function() { console.log('Service Worker Registered'); });
+        }
+
+        var cacheName = 'weatherPWA-step-6-1';
+        var filesToCache = [];
+
+        self.addEventListener('install', function(e) {
+          console.log('[ServiceWorker] Install');
+          e.waitUntil(
+            caches.open(cacheName).then(function(cache) {
+              console.log('[ServiceWorker] Caching app shell');
+              return cache.addAll(filesToCache);
+            })
+          );
+        });
     </script>
 
   </body>
