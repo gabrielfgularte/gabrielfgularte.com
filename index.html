@@ -106,7 +106,7 @@
     <ul>
 
       <li class="job-list-item">
-        <img src="imgs/works/aec.png" alt="Amor Em Cristo">
+        <img data-src="imgs/works/aec.webp" alt="Amor Em Cristo" onerror="this.onerror=null; this.src='aec.png'">
         <div>
           <p>
             Amor Em Cristo (2012 - Hoje) <br>
@@ -124,7 +124,7 @@
       </li>
 
       <li class="job-list-item">
-        <img src="imgs/works/wiser.png" alt="Wiser Imóveis">
+        <img data-src="imgs/works/wiser.webp" alt="Wiser Imóveis" onerror="this.onerror=null; this.src='wiser.png'">
         <div>
           <p>
             Wiser Imóveis (2017) <br>
@@ -141,7 +141,7 @@
       </li>
 
       <li class="job-list-item">
-        <img src="imgs/works/ne.png" alt="Novas Emoções">
+        <img data-src="imgs/works/ne.webp" alt="Novas Emoções" onerror="this.onerror=null; this.src='ne.png'">
         <div>
           <p>
             Novas Emoções (2012 - Hoje) <br>
@@ -158,7 +158,7 @@
       </li>
 
       <li class="job-list-item">
-        <img src="imgs/works/evin.png" alt="Evin">
+        <img data-src="imgs/works/evin.webp" alt="Evin" onerror="this.onerror=null; this.src='evin.png'">
         <div>
           <p>
             Evin (2016 - Hoje) <br>
@@ -175,7 +175,7 @@
       </li>
 
       <li class="job-list-item">
-        <img src="imgs/works/priorite.png" alt="Priorité Comunicação">
+        <img data-src="imgs/works/priorite.webp" alt="Priorité Comunicação" onerror="this.onerror=null; this.src='priorite.png'">
         <div>
           <p>
             Priorité Comunicação (2010) <br>
@@ -192,7 +192,7 @@
       </li>
 
       <li class="job-list-item">
-        <img src="imgs/works/mix.png" alt="MixBR Games">
+        <img data-src="imgs/works/mix.webp" alt="MixBR Games" onerror="this.onerror=null; this.src='mix.png'">
         <div>
           <p>
             MixBR Games (2017 - Hoje) <br>
@@ -217,6 +217,21 @@
       <li class="social-item"><a href="https://facebook.com/gabrielfgularte" target="_blank">Facebook</a></li>
       <li class="social-item"><a href="https://twitter.com/gabrielfgularte" target="_blank">Twitter</a></li>
     </ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.5.2/lazyload.min.js"></script>
+
+    <script type="text/javascript">
+    (function(w, d){
+      var b = d.getElementsByTagName('body')[0];
+      var s = d.createElement("script"); s.async = true;
+      var v = !("IntersectionObserver" in w) ? "8.7.1" : "10.5.2";
+      s.src = "https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/" + v + "/lazyload.min.js";
+      w.lazyLoadOptions = {}; // Your options here. See "recipes" for more information about async.
+      b.appendChild(s);
+      }(window, document));
+
+      new LazyLoad();
+    </script>
 
   </body>
 </html>
